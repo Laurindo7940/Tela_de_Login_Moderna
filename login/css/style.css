@@ -1,0 +1,129 @@
+.button {
+  --color: #181818;
+  padding: 0.8em 1.7em;
+  background-color: transparent;
+  border-radius: 0.3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 16px;
+  border: 1px solid;
+  font-family: inherit;
+  color: var(--color);
+  z-index: 1;
+}
+
+.button::before,
+.button::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+}
+
+.button::before {
+  top: -1em;
+  left: -1em;
+}
+
+.button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+
+.button:hover::before,
+.button:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+.button:hover {
+  color: white;
+}
+
+.button:active {
+  filter: brightness(0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  background-color: #ffffff;
+  height: 100vh;
+  width: 100%;
+}
+.container .columns {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 100vh;
+  grid-template-areas: "image" "login";
+}
+.container .columns .column-img {
+  height: 100vh;
+  background-color: #181818;
+  grid-area: image;
+  background-image: url(../images/pexels-eberhard-grossgasteiger-1366919.jpg);
+  background-repeat: no-repeat;
+  background-size: 500px 640px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.container .columns .column-login {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container .columns .column-login h1 {
+  color: #181818;
+  margin-bottom: 30px;
+}
+.container .columns .column-login .form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.container .columns .column-login .form-group .label {
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+.container .columns .column-login .form-group .input {
+  width: 500px;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  background-color: #e6e6e6;
+}
+.container .columns .column-login .help {
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+.container .columns .column-login .help a {
+  color: black;
+}
+.container .columns .column-login .help a:hover {
+  text-decoration: none;
+}
+.container .columns .column-login .footer {
+  position: relative;
+  top: 150px;
+}
+
+/*# sourceMappingURL=style.css.map */
